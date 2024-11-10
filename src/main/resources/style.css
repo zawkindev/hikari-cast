@@ -1,0 +1,11 @@
+.button, .text-field, .combo-box {
+    -fx-max-width: Infinity;
+    -fx-pref-width: 100%;
+    -fx-pref-height: 40px;
+}
+
+.button-group{
+    -fx-max-width: 200px;
+    -fx-pref-width: 200px;
+    -fx-min-width: 200px;
+}
