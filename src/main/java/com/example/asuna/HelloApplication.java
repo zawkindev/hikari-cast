@@ -20,45 +20,13 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class HelloApplication extends Application {
-    private static boolean isStreaming = false;
-    private static boolean isRecording = false;
 
     @Override
     public void start(Stage primaryStage) throws IOException {
         HBox MainBox = new HBox(10);
+        ButtonGroup buttonGroup = new ButtonGroup();
 
-        VBox ButtonGroup = new VBox(10);
-        Button Stream = new Button("Start Stream");
-        TextField StreamKey = new TextField();
-        StreamKey.setPromptText("YouTube Stream key");
-        Button Record = new Button("Start Recording");
-        ComboBox<String> QualityComboBox = new ComboBox<>();
-        QualityComboBox.getItems().addAll("Low", "Medium", "High", "Ultra");
-        QualityComboBox.setValue("Choose Video Quality");
-        ButtonGroup.getChildren().addAll(Stream, StreamKey, Record, QualityComboBox);
-        ButtonGroup.getStyleClass().add("button-group");
-        ButtonGroup.setAlignment(Pos.CENTER);
-        ButtonGroup.setPadding(new Insets(0, 20, 0, 20));
-
-        Stream.setOnAction(event -> {
-            isStreaming = !isStreaming;
-            if (isStreaming && !isRecording) {
-                Stream.setText("Stop Streaming");
-            } else {
-                Stream.setText("Start Streaming");
-            }
-        });
-
-        Record.setOnAction(event -> {
-            isRecording = !isRecording;
-            if (isRecording && !isStreaming) {
-                Record.setText("Stop Recording");
-            } else {
-                Record.setText("Start Recording");
-            }
-        });
-
-        MainBox.getChildren().addAll(ButtonGroup);
+        MainBox.getChildren().addAll(buttonGroup);
 
         Scene scene = new Scene(MainBox, 1200, 700);
         scene.getStylesheets().add("style.css");
