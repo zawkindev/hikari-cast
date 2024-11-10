@@ -24,3 +24,14 @@ hs_err_pid*
 replay_pid*
 
 .idea
+
+# Gradle
+.gradle/
+build/
+*.gradle
+gradle-wrapper.jar
+gradle-wrapper.properties
+
+# OS generated files
+.DS_Store
+Thumbs.db
