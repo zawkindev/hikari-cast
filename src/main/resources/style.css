@@ -4,6 +4,12 @@
     -fx-pref-height: 40px;
 }
 
+.image-view {
+    -fx-max-width: Infinity;
+    -fx-pref-width: 100%;
+    -fx-pref-height: 100%;
+}
+
 .button-group{
     -fx-max-width: 200px;
     -fx-pref-width: 200px;

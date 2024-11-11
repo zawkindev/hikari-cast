@@ -1,5 +1,6 @@
 package com.example.asuna;
 
+import com.example.asuna.utils.ScreenCapture;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -7,9 +8,12 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 
+import java.awt.*;
+
 public class ButtonGroup extends VBox {
     private static boolean isStreaming = false;
     private static boolean isRecording = false;
+    private ScreenCapture screenCapture;
 
     public ButtonGroup() {
         this.setSpacing(10);
@@ -43,6 +47,11 @@ public class ButtonGroup extends VBox {
             } else {
                 Record.setText("Start Recording");
             }
+
         });
+    }
+
+    public void setScreenCapture(ScreenCapture screenCapture) {
+        this.screenCapture = screenCapture;
     }
 }

@@ -11,6 +11,7 @@ version = '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
+    maven { url 'https://github.com/bytedeco/javacv/blob/master/README.md' }
 }
 
 ext {
@@ -37,6 +38,8 @@ javafx {
 dependencies {
     testImplementation "org.junit.jupiter:junit-jupiter-api:${junitVersion}"
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${junitVersion}"
+
+    implementation("org.bytedeco:javacv-platform:1.5.10")
 }
 
 test {
